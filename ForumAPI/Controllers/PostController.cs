@@ -10,7 +10,6 @@ namespace ForumAPI.Controllers
 	{
 
 
-		[Route("post")]
 		[HttpGet]
 		public ActionResult<List<Post>> Test()
 		{
@@ -22,7 +21,6 @@ namespace ForumAPI.Controllers
 		//	new Post(id: 1,Category.Question,title: "titlestring", content: "contentstring")
 		//};
 
-		[Route("post")]
 		[HttpPost]
 		public ActionResult<List<Post>> Create(Post post)   //can be made async 
 		{
