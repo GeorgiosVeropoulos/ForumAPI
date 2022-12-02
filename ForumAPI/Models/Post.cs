@@ -8,6 +8,13 @@
 		Clarification
 	}
 
+	public enum Status
+	{
+		ContainsProfanity,
+		ContainsSpam,
+		Ok
+	}
+
 
 	public class Post
 	{
@@ -32,11 +39,22 @@
 			Content = content;
 		}
 
-		public static List<Post> Posts(Post post)
+		public static Status AddPost(Post post)
 		{
+			// Check if post already exists
+			foreach(Post p in newposts)
+			{
+				if (p.Title == post.Title)
+				{
+					return Status.ContainsSpam;
+				}
+			}
+
+			// Check if post contains profanity
+			if(containsProfanity(post)) return Status.ContainsProfanity;
 
 			newposts.Add(new Post(post.Id, post.ThreadId, post.PostCategory, post.Title, post.Content));
-			return newposts;
+			return Status.Ok;
 		}
 
 		public static List<Post> ReturnPosts()
@@ -98,8 +116,8 @@
 		{
 			List<Post> posts = new List<Post>();
 			posts.Add(new Post(1, 1, Category.Question, "How do I cook fish?", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat."));
-			posts.Add(new Post(2, 2, Category.Suggestion, "How to cook fish", "Vel pharetra vel turpis nunc eget lorem dolor sed. Quam adipiscing vitae proin sagittis. Condimentum id venenatis a condimentum vitae sapien. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Arcu risus quis varius quam quisque id diam. Nisl tincidunt eget nullam non nisi est sit. Mattis molestie a iaculis at erat. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at."));
-			posts.Add(new Post(3, 3, Category.Clarification, "Is this how you cook fish?", "Vel pharetra vel turpis nunc eget lorem dolor sed. Quam adipiscing vitae proin sagittis. Condimentum id venenatis a condimentum vitae sapien. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Arcu risus quis varius quam quisque id diam. Nisl tincidunt eget nullam non nisi est sit. Mattis molestie a iaculis at erat. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at."));
+			posts.Add(new Post(2, 1, Category.Suggestion, "How to cook fish", "Vel pharetra vel turpis nunc eget lorem dolor sed. Quam adipiscing vitae proin sagittis. Condimentum id venenatis a condimentum vitae sapien. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Arcu risus quis varius quam quisque id diam. Nisl tincidunt eget nullam non nisi est sit. Mattis molestie a iaculis at erat. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at."));
+			posts.Add(new Post(3, 1, Category.Clarification, "Is this how you cook fish?", "Vel pharetra vel turpis nunc eget lorem dolor sed. Quam adipiscing vitae proin sagittis. Condimentum id venenatis a condimentum vitae sapien. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Arcu risus quis varius quam quisque id diam. Nisl tincidunt eget nullam non nisi est sit. Mattis molestie a iaculis at erat. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at."));
 			return posts;
 		}
 	}

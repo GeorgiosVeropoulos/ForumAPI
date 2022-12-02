@@ -20,7 +20,7 @@
 		{
 			List<ForumThread> threads = new List<ForumThread>();
 			threads.Add(new ForumThread(1, "Cooking"));
-			threads.Add(new ForumThread(1, "Dancing"));
+			threads.Add(new ForumThread(2, "Dancing"));
 			return threads;
 		}
 	}

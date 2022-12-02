@@ -22,12 +22,29 @@ namespace ForumAPI.Controllers
 		//};
 
 		[HttpPost]
-		public ActionResult<List<Post>> Create(Post post)   //can be made async 
+		// public ActionResult<List<Post>> Create(Post post)   //can be made async 
+		public ActionResult<string> Create(Post post)   //can be made async 
 		{
 
 			//Post..Add(post);
 			//return Ok(Posts);
-			return Post.Posts(post);
+			Status addingPostStatus = Post.AddPost(post);
+			if (addingPostStatus == Status.Ok)
+			{
+				return Ok("Post added successfully");
+			}
+			else if (addingPostStatus == Status.ContainsProfanity)
+			{
+				return BadRequest("Post contains profanity");
+			}
+			else if (addingPostStatus == Status.ContainsSpam)
+			{
+				return BadRequest("Post contains spam");
+			}
+			else
+			{
+				return BadRequest("Post could not be added");
+			}
 		}
 
 
