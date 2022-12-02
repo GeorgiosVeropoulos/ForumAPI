@@ -10,11 +10,11 @@ namespace ForumAPI.Controllers
 	{
 
 
-		[HttpGet]
-		public ActionResult<List<Post>> Test()
-		{
-			return Post.ReturnPosts();
-		}
+		// [HttpGet]
+		// public ActionResult<List<Post>> Test()
+		// {
+		// 	return Post.ReturnPosts();
+		// }
 
 		//private static List<Post> Posts = new List<Post>()
 		//{
