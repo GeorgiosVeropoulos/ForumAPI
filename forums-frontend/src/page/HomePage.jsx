@@ -59,10 +59,7 @@ const HomePage = () => {
     }
     const addPost = async (post) => {
         const newPost = { ...post, threadId: activeThread.id }
-        const newPosts = [...posts, newPost]
-        setPosts(newPosts)
-        console.log(newPost)
-        await axios.post('https://localhost:7185/api/post/', newPost).catch(err => {
+        const res = await axios.post('https://localhost:7185/api/post/', newPost).catch(err => {
             console.log(err.response.data)
             if (err.response.data == "Post contains spam") {
                 alert("Post already exists")
@@ -70,6 +67,10 @@ const HomePage = () => {
                 alert("Post contains profanity")
             }
         })
+        if (res.status == 200){
+            const newPosts = [...posts, newPost]
+            setPosts(newPosts)
+        }
     }
 
     const isThreadActive = (threadName) => threadName === activeThread?.name
