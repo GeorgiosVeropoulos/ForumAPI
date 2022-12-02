@@ -1,5 +1,6 @@
 using ForumAPI.Models;
 
+
 namespace ForumApi.NUnitTest
 {
 	public class PostTests
@@ -16,11 +17,13 @@ namespace ForumApi.NUnitTest
 		}
 
 		[Test]
-		public void TestTheAdditionOfaPostInTheList()
+		public void TestTheProfanityOfAPost()
 		{
 			var post = new Post(1, 1, 0, "test1", "bitch");
 
+			bool profanity = Post.containsProfanity(post);
 
+			Assert.IsTrue(profanity);
 
 		}
 

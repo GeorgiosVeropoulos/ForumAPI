@@ -49,13 +49,13 @@
 		//	bool HasProfanity = containsProfanity(newposts[1]);
 		//}
 
-		public bool containsProfanity(Post post)
+		public static bool containsProfanity(Post post)
 		{
 			bool badwordpresent = false;
 
 			string[] inStrArray = post.Content.Split(new char[] { ' ' });
 
-			string[] words = this.profanityArray();
+			string[] words = profanityArray();
 
 			for (int x = 0; x < inStrArray.Length; x++)
 			{
@@ -75,7 +75,7 @@
 			return badwordpresent;
 
 		}
-		private string[] profanityArray()
+		private static string[] profanityArray()
 		{
 			string[] words = { "stupid", "bitch" };
 			return words;
