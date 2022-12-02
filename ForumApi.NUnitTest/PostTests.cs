@@ -15,11 +15,15 @@ namespace ForumApi.NUnitTest
 			Assert.That(post.Id, Is.EqualTo(1));
 		}
 
+		[Test]
 		public void TestTheAdditionOfaPostInTheList()
 		{
-			var post = new Post(1, 1, 0, "test1", "test1.1");
+			var post = new Post(1, 1, 0, "test1", "bitch");
+
 
 
 		}
+
+
 	}
 }

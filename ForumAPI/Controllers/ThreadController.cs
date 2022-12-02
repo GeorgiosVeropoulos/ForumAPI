@@ -14,13 +14,10 @@ namespace ForumAPI.Controllers
 			return ForumThread.CreateDemoThreads();
 		}
 
-		[Route("postsbythreadId")]
-		[HttpGet]
-		public List<Post> RetrievePostsByThreadId(int threadId)
+		[HttpGet("{id}")]
+		public List<Post> RetrievePostsByThreadId(int id)
 		{
-
-
-			return Post.ReturnPostsWithThreadID(threadId);
+			return Post.ReturnPostsWithThreadID(id);
 		}
 
 
