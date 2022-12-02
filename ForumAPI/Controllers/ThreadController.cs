@@ -7,11 +7,10 @@ namespace ForumAPI.Controllers
 	[Route("api/threads")]
 	public class ThreadController : Controller
 	{
-		[Route("threads")]
 		[HttpGet]
 		public List<ForumThread> RetreiveAllThreads()
 		{
-			return ForumThread.CreateDemoThreads();
+			return ForumThread.GetAllThreads();
 		}
 
 		[HttpGet("{id}")]
