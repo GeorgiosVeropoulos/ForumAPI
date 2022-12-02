@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumAPI", "ForumAPI\ForumAPI.csproj", "{761B180B-4EB2-4783-A88A-DB9DB491CDB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumApi.NUnitTest", "ForumApi.NUnitTest\ForumApi.NUnitTest.csproj", "{1ADDA640-C1F9-48F9-A365-3FD4BD4A4538}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{761B180B-4EB2-4783-A88A-DB9DB491CDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761B180B-4EB2-4783-A88A-DB9DB491CDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761B180B-4EB2-4783-A88A-DB9DB491CDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761B180B-4EB2-4783-A88A-DB9DB491CDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ADDA640-C1F9-48F9-A365-3FD4BD4A4538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADDA640-C1F9-48F9-A365-3FD4BD4A4538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADDA640-C1F9-48F9-A365-3FD4BD4A4538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADDA640-C1F9-48F9-A365-3FD4BD4A4538}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A8685AA-D512-49C5-916B-BB6EA50D9A21}
+	EndGlobalSection
+EndGlobal
