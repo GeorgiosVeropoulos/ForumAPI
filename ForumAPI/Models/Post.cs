@@ -51,7 +51,7 @@
 			}
 
 			// Check if post contains profanity
-			if(containsProfanity(post)) return Status.ContainsProfanity;
+			if(ContainsProfanity(post)) return Status.ContainsProfanity;
 
 			newposts.Add(new Post(post.Id, post.ThreadId, post.PostCategory, post.Title, post.Content));
 			return Status.Ok;
@@ -67,30 +67,19 @@
 		//	bool HasProfanity = containsProfanity(newposts[1]);
 		//}
 
-		public static bool containsProfanity(Post post)
+		public static bool ContainsProfanity(Post post)
 		{
-			bool badwordpresent = false;
-
 			string[] inStrArray = post.Content.Split(new char[] { ' ' });
 
 			string[] words = profanityArray();
 
-			for (int x = 0; x < inStrArray.Length; x++)
+			foreach (string word in words)
 			{
-				for (int i = 0; i < words.Length; i++)
-				{
-					if (inStrArray[x].ToLower() == words[i].ToLower())
-					{
-						badwordpresent = true;
-
-						break;
-					}
-				}
-
-				if (badwordpresent == true) break;
+				foreach (string str in inStrArray)
+					if (str.ToLower() == word.ToLower())
+						return true;
 			}
-
-			return badwordpresent;
+			return false;
 
 		}
 		private static string[] profanityArray()
